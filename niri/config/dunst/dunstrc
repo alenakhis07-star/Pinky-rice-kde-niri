@@ -1,0 +1,52 @@
+# Pinky night — dunst
+[global]
+    monitor = 0
+    follow = mouse
+    origin = top-right
+    offset = (14, 50)
+    width = (300, 420)
+    height = (0, 300)
+    gap_size = 6
+    padding = 12
+    horizontal_padding = 14
+    frame_width = 2
+    frame_color = "#e7a3bf"
+    corner_radius = 14
+    separator_height = 0
+    font = Terminus (TTF) 13
+    markup = full
+    format = "<span foreground='#c98ba6'>%a</span>\n<b>%s</b>\n%b"
+    alignment = left
+    icon_theme = Papirus-Dark
+    enable_recursive_icon_lookup = true
+    min_icon_size = 32
+    max_icon_size = 64
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 0
+    progress_bar_corner_radius = 5
+    highlight = "#e7a3bf"
+    mouse_left_click = do_action, close_current
+    mouse_right_click = close_all
+    layer = overlay
+
+[urgency_low]
+    background = "#1f1a22e6"
+    foreground = "#cbb8c2"
+    timeout = 4
+
+[urgency_normal]
+    background = "#1f1a22e6"
+    foreground = "#e6d3dc"
+    timeout = 6
+
+[urgency_critical]
+    background = "#3a1f2be6"
+    foreground = "#f0e2e9"
+    frame_color = "#e0788f"
+    timeout = 0
+
+[osd]
+    appname = pinky-osd
+    timeout = 2
+    history_ignore = yes

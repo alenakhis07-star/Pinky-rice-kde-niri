@@ -1,0 +1,24 @@
+// Pinky night — niri. Основа: github.com/revaljonathan/val-niri, переделано под тёмно-розовый стиль.
+include "~/.config/niri/colors.kdl"
+include "~/.config/niri/inputs.kdl"
+include "~/.config/niri/outputs.kdl"
+include "~/.config/niri/layout.kdl"
+include "~/.config/niri/startup.kdl"
+include "~/.config/niri/rules.kdl"
+include "~/.config/niri/binds.kdl"
+
+prefer-no-csd
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+// Qt-программы берут цвета, иконки и шрифты из настроек KDE (Strawberry Night, Papirus-Dark, Terminus)
+environment {
+    QT_QPA_PLATFORMTHEME "kde"
+    XCURSOR_THEME "mizuki-psekai-cursor"
+    XCURSOR_SIZE "32"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+
+screenshot-path "~/Изображения/Снимки экрана/Снимок экрана от %Y-%m-%d %H-%M-%S.png"

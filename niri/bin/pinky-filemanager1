@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# org.freedesktop.FileManager1 («показать в папке»): в niri — Nautilus, в KDE — Dolphin
+if [ "${XDG_CURRENT_DESKTOP:-}" = "niri" ]; then exec /usr/bin/nautilus --gapplication-service; fi
+exec /usr/bin/dolphin --daemon

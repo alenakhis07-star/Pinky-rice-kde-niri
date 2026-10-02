@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Super+P / Ctrl+Alt+Del / кнопка ⏻ в баре: меню сеанса
+lock="  Заблокировать"; sleep_="  Сон"; logout="  Выйти из сеанса"; reboot="  Перезагрузка"; off="  Выключить"
+choice=$(printf '%s\n' "$lock" "$sleep_" "$logout" "$reboot" "$off" |
+  rofi -dmenu -i -p " ♡ сеанс " -theme-str 'window { width: 360px; } listview { lines: 5; } element-icon { size: 0; }') || exit 0
+case "$choice" in
+  "$lock")   ~/.local/bin/pinky-lock ;;
+  "$sleep_") ~/.local/bin/pinky-lock & sleep 1; systemctl suspend ;;
+  "$logout") niri msg action quit --skip-confirmation ;;
+  "$reboot") systemctl reboot ;;
+  "$off")    systemctl poweroff ;;
+esac

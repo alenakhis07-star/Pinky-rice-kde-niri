@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Блокировка экрана: сначала раскладка -> английская (us, первая в списке), чтобы пароль всегда вводился латиницей
+niri msg action switch-layout 0 2>/dev/null
+pgrep -x swaylock >/dev/null && exit 0
+exec swaylock -f "$@"

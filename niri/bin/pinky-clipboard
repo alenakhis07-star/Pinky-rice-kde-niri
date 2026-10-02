@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Super+V: история буфера обмена (cliphist + rofi)
+sel=$(cliphist list | rofi -dmenu -p " ♡ буфер " -display-columns 2) || exit 0
+printf '%s' "$sel" | cliphist decode | wl-copy

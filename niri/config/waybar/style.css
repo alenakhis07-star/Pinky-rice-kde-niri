@@ -1,0 +1,98 @@
+/* Pinky night — Waybar. Палитра Strawberry Night */
+@define-color bg      rgba(25, 21, 28, 0.82);
+@define-color pill    rgba(43, 36, 48, 0.90);
+@define-color fg      #e6d3dc;
+@define-color dim     #9a8a93;
+@define-color pink    #e7a3bf;
+@define-color rose    #c98ba6;
+@define-color red     #e0788f;
+
+* {
+    font-family: "Terminus (TTF)", "Symbols Nerd Font", sans-serif;
+    font-size: 15px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: @bg;
+    color: @fg;
+    border: 1px solid rgba(231, 163, 191, 0.35);
+    border-radius: 14px;
+}
+
+tooltip {
+    background: rgba(31, 26, 34, 0.95);
+    border: 1px solid @rose;
+    border-radius: 10px;
+    color: @fg;
+}
+
+#custom-heart,
+#workspaces,
+#mpris,
+#clock,
+#pulseaudio, #battery, #network, #language, #tray {
+    background: @pill;
+    color: @fg;
+    padding: 2px 12px;
+    margin: 5px 0;
+    border-radius: 10px;
+}
+
+#custom-heart {
+    color: @pink;
+    font-size: 18px;
+    margin-left: 6px;
+    padding: 0 12px;
+}
+
+#workspaces { padding: 0 4px; }
+#workspaces button {
+    color: @dim;
+    padding: 0 9px;
+    margin: 3px 2px;
+    border-radius: 8px;
+    background: transparent;
+}
+#workspaces button.active {
+    color: #1c1720;
+    background: @pink;
+}
+#workspaces button.urgent { color: #1c1720; background: @red; }
+#workspaces button:hover { background: rgba(231, 163, 191, 0.25); color: @fg; }
+
+#mpris { color: @rose; }
+#mpris.paused { color: @dim; }
+
+#clock { color: @pink; font-weight: bold; }
+
+#cpu         { color: #e7a3bf; }
+#temperature { color: #e0b27a; }
+#temperature.critical { color: @red; }
+#memory      { color: #b79ad6; }
+#pulseaudio  { color: #8ea9d6; }
+#pulseaudio.muted { color: @dim; }
+#battery     { color: #8fc7a0; }
+#battery.warning  { color: #e0b27a; }
+#battery.critical { color: @red; }
+#network     { color: #88c1c7; }
+#network.disconnected { color: @dim; }
+#language    { color: @pink; }
+#tray        { margin-right: 6px; }
+
+#idle_inhibitor { color: @dim; background: @pill; padding: 2px 12px; margin: 5px 0; border-radius: 10px; }
+#idle_inhibitor.activated { color: #1c1720; background: #e0b27a; }
+#bluetooth { color: #8ea9d6; background: @pill; padding: 2px 12px; margin: 5px 0; border-radius: 10px; }
+#bluetooth.off, #bluetooth.disabled { color: @dim; }
+#bluetooth.connected { color: #a9c0e4; }
+#custom-power { color: @pink; background: @pill; padding: 2px 14px; margin: 5px 6px 5px 0; border-radius: 10px; }
+#custom-power:hover { color: #1c1720; background: @pink; }
+
+/* группа «железо»: значок чипа, по нажатию раскрываются CPU, температура, память */
+#hardware { background: @pill; margin: 5px 0; border-radius: 10px; padding: 0 4px; }
+#custom-hw { color: @pink; padding: 2px 10px; }
+#cpu, #temperature, #memory { background: transparent; padding: 2px 8px; margin: 0; }
+#custom-dnd { color: @dim; background: @pill; padding: 2px 12px; margin: 5px 0; border-radius: 10px; }
+#custom-dnd.on { color: #1c1720; background: @rose; }

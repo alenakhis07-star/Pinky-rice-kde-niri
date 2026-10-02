@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# «Не беспокоить» для Waybar: без аргумента — статус в JSON, с toggle — переключить
+if [ "$1" = toggle ]; then dunstctl set-paused toggle; pkill -RTMIN+8 waybar; exit 0; fi
+bell=$'\U000f009a'; bell_off=$'\U000f009b'
+if [ "$(dunstctl is-paused)" = true ]; then
+  n=$(dunstctl count waiting)
+  extra=""; [ "$n" -gt 0 ] && extra="  $n"
+  printf '{"text":"%s%s","class":"on","tooltip":"Не беспокоить: включено (ждут: %s)"}\n' "$bell_off" "$extra" "$n"
+else
+  printf '{"text":"%s","class":"off","tooltip":"Не беспокоить: выключено"}\n' "$bell"
+fi

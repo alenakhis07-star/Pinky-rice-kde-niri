@@ -1,0 +1,38 @@
+// Тёмно-розовая палитра Strawberry Night (та же, что в KDE)
+layout {
+    background-color "#19151c"
+
+    focus-ring {
+        active-color   "#e7a3bf"
+        inactive-color "#5c4f5f"
+        urgent-color   "#e0788f"
+    }
+    tab-indicator {
+        active-color   "#e7a3bf"
+        inactive-color "#5c4f5f"
+        urgent-color   "#e0788f"
+    }
+    border {
+        active-color   "#e7a3bf"
+        inactive-color "#2b2430e6"
+        urgent-color   "#e0788f"
+    }
+    insert-hint {
+        color "#e7a3bf80"
+    }
+    shadow {
+        color "#0d0a0fb0"
+    }
+}
+
+overview {
+    backdrop-color "#140f17"
+}
+
+recent-windows {
+    highlight {
+        active-color "#c98ba6"
+        urgent-color "#e0788f"
+        corner-radius 12
+    }
+}

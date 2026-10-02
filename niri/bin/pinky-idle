@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Бездействие в niri: 4 мин — притушить, 5 мин — заблокировать и погасить экраны, 15 мин — сон.
+# Кнопка «кофеин» в баре (idle_inhibitor) отключает всё это, пока включена.
+exec swayidle -w \
+    timeout 240 'brightnessctl -s set 10%' resume 'brightnessctl -r' \
+    timeout 300 '~/.local/bin/pinky-lock' \
+    timeout 310 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' \
+    timeout 900 'systemctl suspend' \
+    before-sleep '~/.local/bin/pinky-lock'

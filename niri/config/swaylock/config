@@ -1,0 +1,37 @@
+# Pinky night — swaylock-effects (Super+L)
+image=@HOME@/.local/share/wallpapers/kanonbg-night.png
+scaling=fill
+effect-blur=8x4
+effect-vignette=0.4:0.8
+fade-in=0.3
+clock
+timestr=%H:%M
+datestr=%A, %d %B
+font=Terminus (TTF)
+font-size=26
+indicator
+indicator-radius=120
+indicator-thickness=10
+ignore-empty-password
+show-failed-attempts
+inside-color=1f1a22cc
+inside-clear-color=1f1a22cc
+inside-ver-color=2b2430cc
+inside-wrong-color=3a1f2bcc
+ring-color=c98ba6
+ring-clear-color=8fc7a0
+ring-ver-color=e7a3bf
+ring-wrong-color=e0788f
+key-hl-color=f0e2e9
+bs-hl-color=e0788f
+line-color=00000000
+line-clear-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+separator-color=00000000
+text-color=f0e2e9
+text-clear-color=f0e2e9
+text-ver-color=f0e2e9
+text-wrong-color=f0e2e9
+layout-bg-color=00000000
+layout-text-color=e6d3dc

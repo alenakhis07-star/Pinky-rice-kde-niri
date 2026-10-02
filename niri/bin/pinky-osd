@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Громкость/яркость с полоской-уведомлением dunst
+osd() { notify-send -a pinky-osd -i "$1" -h "int:value:$2" -h string:x-dunst-stack-tag:pinky-osd "$3" "$2%"; }
+case "$1" in
+  vol-up)   wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+ ;;
+  vol-down) wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- ;;
+  vol-mute) wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle ;;
+  mic-mute) wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+            wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED \
+              && notify-send -a pinky-osd -i microphone-sensitivity-muted -h string:x-dunst-stack-tag:pinky-osd "Микрофон" "выключен" \
+              || notify-send -a pinky-osd -i microphone-sensitivity-high -h string:x-dunst-stack-tag:pinky-osd "Микрофон" "включён"
+            exit 0 ;;
+  br-up)    brightnessctl -q set 5%+ ;;
+  br-down)  brightnessctl -q set 5%- ;;
+esac
+case "$1" in
+  vol-*) v=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+         p=$(awk '{print int($2*100)}' <<<"$v")
+         if grep -q MUTED <<<"$v"; then osd audio-volume-muted 0 "Звук выключен"
+         else osd audio-volume-high "$p" "Громкость"; fi ;;
+  br-*)  p=$(( $(brightnessctl get) * 100 / $(brightnessctl max) ))
+         osd display-brightness "$p" "Яркость" ;;
+esac

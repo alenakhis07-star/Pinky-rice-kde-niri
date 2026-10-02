@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Neovim
+GenericName=Текстовый редактор
+Comment=Открыть в Neovim (в kitty)
+Exec=kitty --class nvim -e nvim %F
+Icon=nvim
+Terminal=false
+Categories=Utility;TextEditor;
+Keywords=text;editor;vim;nvim;
+MimeType=text/plain;text/english;text/markdown;text/x-markdown;text/x-log;text/x-readme;text/csv;text/tab-separated-values;text/x-makefile;text/x-cmake;text/x-c;text/x-csrc;text/x-chdr;text/x-c++src;text/x-c++hdr;text/x-java;text/x-python;text/x-python3;text/x-script.python;text/x-rust;text/x-go;text/x-lua;text/x-ruby;text/x-perl;text/x-php;text/x-sql;text/x-tex;text/x-patch;text/x-diff;text/x-dockerfile;text/x-systemd-unit;text/css;text/javascript;text/x-typescript;text/xml;text/x-nfo;text/x-kotlin;text/x-qml;text/x-toml;text/x-yaml;text/x-ini;application/x-shellscript;text/x-shellscript;application/x-zerosize;application/json;application/x-ndjson;application/toml;application/x-toml;application/yaml;application/x-yaml;application/xml;application/x-desktop;application/x-kdl;application/javascript;application/x-php;application/sql;application/x-wine-extension-ini;application/x-subrip;application/x-theme;application/x-mswinurl;application/x-trash;application/x-config;application/x-kde-config;application/x-perl;application/x-ruby;

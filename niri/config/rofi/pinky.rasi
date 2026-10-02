@@ -1,0 +1,36 @@
+/* Pinky night — rofi */
+* {
+    bg:     #1f1a22e6;
+    bg2:    #2b2430;
+    fg:     #e6d3dc;
+    dim:    #9a8a93;
+    pink:   #e7a3bf;
+    rose:   #c98ba6;
+    background-color: transparent;
+    text-color: @fg;
+}
+window {
+    width: 560px;
+    background-color: @bg;
+    border: 2px;
+    border-color: @pink;
+    border-radius: 16px;
+    padding: 14px;
+}
+mainbox { spacing: 12px; }
+inputbar {
+    background-color: @bg2;
+    border-radius: 12px;
+    padding: 10px 12px;
+    spacing: 8px;
+    children: [ prompt, entry ];
+}
+prompt { text-color: @pink; }
+entry { placeholder: "поиск..."; placeholder-color: @dim; cursor: text; }
+listview { lines: 8; columns: 1; spacing: 4px; scrollbar: false; fixed-height: false; }
+element { padding: 8px 10px; border-radius: 10px; spacing: 10px; }
+element-icon { size: 28px; vertical-align: 0.5; }
+element-text { vertical-align: 0.5; text-color: inherit; }
+element selected.normal { background-color: @rose; text-color: #1c1720; }
+element alternate.normal, element normal.normal { background-color: transparent; }
+message { background-color: @bg2; border-radius: 10px; padding: 8px; }

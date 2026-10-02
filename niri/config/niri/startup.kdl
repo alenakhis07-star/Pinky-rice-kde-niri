@@ -1,0 +1,15 @@
+// переменные (тёмная KDE-тема для Qt, курсор) — ещё и в systemd/D-Bus, чтобы их получали
+// программы из автозапуска и запущенные через D-Bus (Dolphin из диалогов и т.п.)
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "QT_QPA_PLATFORMTHEME" "XCURSOR_THEME" "XCURSOR_SIZE" "ELECTRON_OZONE_PLATFORM_HINT"
+// xwayland-satellite niri запускает сам, если он установлен
+spawn-at-startup "awww-daemon"
+spawn-sh-at-startup "sleep 1; awww img \"$(cat $HOME/.config/wallpaper 2>/dev/null || echo $HOME/.local/share/wallpapers/kanonbg-night.png)\" --transition-type none"
+spawn-at-startup "waybar"
+spawn-at-startup "dunst"
+spawn-at-startup "xembedsniproxy"
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "~/.local/bin/pinky-idle"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+// Happ — после бара, чтобы его значок попал в трей (в KDE он стартует из обычного автозапуска)
+spawn-sh-at-startup "sleep 4; pgrep -x Happ >/dev/null || /opt/happ/bin/Happ --autostart"

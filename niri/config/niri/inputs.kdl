@@ -1,0 +1,24 @@
+input {
+    keyboard {
+        xkb {
+            layout "us,ru"
+            // переключение — Super+Space (см. binds.kdl), как в KDE
+        }
+        numlock
+        repeat-delay 300
+        repeat-rate 50
+    }
+    touchpad {
+        tap
+        natural-scroll
+        accel-speed 0.2
+    }
+    mouse {
+    }
+    // фокус под мышью, как было в GNOME/KDE
+    focus-follows-mouse max-scroll-amount="1%"
+}
+
+gestures {
+    hot-corners { off; }
+}

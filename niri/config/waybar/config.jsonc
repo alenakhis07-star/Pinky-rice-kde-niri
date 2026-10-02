@@ -1,0 +1,179 @@
+// Pinky night — Waybar (стиль val-niri, тёмно-розовая палитра)
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "spacing": 6,
+  "margin-top": 6,
+  "margin-left": 8,
+  "margin-right": 8,
+  "modules-left": [
+    "custom/heart",
+    "niri/workspaces",
+    "mpris"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "custom/dnd",
+    "group/hardware",
+    "pulseaudio",
+    "battery",
+    "network",
+    "bluetooth",
+    "niri/language",
+    "tray",
+    "custom/power"
+  ],
+  "custom/heart": {
+    "format": "♡",
+    "tooltip": false,
+    "on-click": "rofi -show drun"
+  },
+  "niri/workspaces": {
+    "format": "{index}",
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down"
+  },
+  "mpris": {
+    "format": "  {artist} — {title}",
+    "format-paused": "  {artist} — {title}",
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+  "clock": {
+    "format": "  {:L%A, %d %B   %H:%M}",
+    "locale": "ru_RU.UTF-8",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "today": "<span color='#e7a3bf'><b>{}</b></span>",
+        "weekdays": "<span color='#c98ba6'>{}</span>"
+      }
+    }
+  },
+  "cpu": {
+    "format": "  {usage}%",
+    "interval": 3,
+    "on-click": "kitty -e btop"
+  },
+  "temperature": {
+    "thermal-zone": 0,
+    "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+    "input-filename": "temp1_input",
+    "critical-threshold": 90,
+    "format": "  {temperatureC}°C",
+    "interval": 5
+  },
+  "memory": {
+    "format": "󰍛  {used:0.1f}G",
+    "interval": 5,
+    "tooltip-format": "{used:0.1f} / {total:0.1f} ГиБ"
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟  выкл",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "scroll-step": 5
+  },
+  "battery": {
+    "states": {
+      "warning": 25,
+      "critical": 12
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀  сеть",
+    "format-disconnected": "✕  нет сети",
+    "max-length": 22,
+    "tooltip-format": "{ifname}: {ipaddr}",
+    "on-click": "kitty -e nmtui"
+  },
+  "niri/language": {
+    "format": "{short}",
+    "on-click": "niri msg action switch-layout next"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "  не спать",
+      "deactivated": ""
+    },
+    "tooltip-format-activated": "Кофеин включён: экран не гаснет и не блокируется",
+    "tooltip-format-deactivated": "Кофеин выключен: экран гаснет и блокируется по таймеру"
+  },
+  "bluetooth": {
+    "format": "",
+    "format-on": "",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "format-connected": "  {device_alias}",
+    "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}: {status}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "max-length": 24,
+    "on-click": "kcmshell6 kcm_bluetooth",
+    "on-click-right": "sh -c 'bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on'"
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip-format": "Выключение, перезагрузка, выход",
+    "on-click": "~/.local/bin/pinky-power"
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/hw",
+      "cpu",
+      "temperature",
+      "memory"
+    ],
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "hw-item",
+      "transition-left-to-right": false,
+      "click-to-reveal": true
+    }
+  },
+  "custom/hw": {
+    "format": "",
+    "tooltip-format": "Нажми — показать CPU, температуру и память"
+  },
+  "custom/dnd": {
+    "exec": "~/.local/bin/pinky-dnd",
+    "return-type": "json",
+    "interval": 10,
+    "signal": 8,
+    "on-click": "~/.local/bin/pinky-dnd toggle",
+    "on-click-right": "dunstctl history-pop"
+  }
+}

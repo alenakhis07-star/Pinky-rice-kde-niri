@@ -1,0 +1,11 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    font: "Terminus (TTF) 15";
+    display-drun: " ♡ ";
+    display-run: " $ ";
+    drun-display-format: "{name}";
+    terminal: "kitty";
+}
+@theme "pinky"
