@@ -23,7 +23,8 @@ binds {
     Mod+Shift+Space    { toggle-window-floating; }
     Mod+Ctrl+Space     { switch-focus-between-floating-and-tiling; }
     Mod+O repeat=false { toggle-overview; }
-    Mod+T              { toggle-column-tabbed-display; }
+    Mod+T              { toggle-window-floating; }
+    Mod+Shift+T        { toggle-column-tabbed-display; }
 
     // раскладка клавиатуры — как в KDE
     Mod+Space { switch-layout "next"; }
