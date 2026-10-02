@@ -1,0 +1,1 @@
+# Pinky-rice-kde-niri
