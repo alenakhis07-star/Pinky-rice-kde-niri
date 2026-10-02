@@ -21,6 +21,7 @@
     "group/hardware",
     "pulseaudio",
     "battery",
+    "power-profiles-daemon",
     "network",
     "bluetooth",
     "niri/language",
@@ -175,5 +176,16 @@
     "signal": 8,
     "on-click": "~/.local/bin/pinky-dnd toggle",
     "on-click-right": "dunstctl history-pop"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Режим питания: {profile}\nНажми, чтобы переключить",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "󰑣",
+      "balanced": "",
+      "power-saver": ""
+    }
   }
 }

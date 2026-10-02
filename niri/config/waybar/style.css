@@ -96,3 +96,7 @@ tooltip {
 #cpu, #temperature, #memory { background: transparent; padding: 2px 8px; margin: 0; }
 #custom-dnd { color: @dim; background: @pill; padding: 2px 12px; margin: 5px 0; border-radius: 10px; }
 #custom-dnd.on { color: #1c1720; background: @rose; }
+#power-profiles-daemon { background: @pill; padding: 2px 12px; margin: 5px 0; border-radius: 10px; color: #8fc7a0; }
+#power-profiles-daemon.performance { color: #e0788f; }
+#power-profiles-daemon.balanced    { color: #e7a3bf; }
+#power-profiles-daemon.power-saver { color: #8fc7a0; }
