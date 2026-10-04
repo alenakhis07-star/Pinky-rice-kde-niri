@@ -58,14 +58,17 @@ binds {
     Mod+Ctrl+Right { focus-workspace-up; }
     Mod+Ctrl+Down  { focus-workspace-down; }
     Mod+Ctrl+Up    { focus-workspace-up; }
-    Mod+Page_Down  { focus-workspace-down; }
-    Mod+Page_Up    { focus-workspace-up; }
+    // Super+Tab — на прошлый рабочий стол и обратно; Super+PgUp/PgDn — на прошлое окно и обратно
+    Mod+Tab        { focus-workspace-previous; }
+    Mod+Page_Down  { focus-window-previous; }
+    Mod+Page_Up    { focus-window-previous; }
     Mod+Shift+Page_Down { move-column-to-workspace-down; }
     Mod+Shift+Page_Up   { move-column-to-workspace-up; }
-    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
-    Mod+Shift+WheelScrollDown cooldown-ms=50 { focus-column-right; }
-    Mod+Shift+WheelScrollUp   cooldown-ms=50 { focus-column-left; }
+    // Super+колесо — окна, Super+Shift+колесо — рабочие столы
+    Mod+WheelScrollDown cooldown-ms=100 { focus-column-right; }
+    Mod+WheelScrollUp   cooldown-ms=100 { focus-column-left; }
+    Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+Shift+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }

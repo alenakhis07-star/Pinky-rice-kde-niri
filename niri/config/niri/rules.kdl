@@ -1,10 +1,8 @@
-// Alt+Tab — по всем окнам на всех рабочих столах (как в KDE); Super+Tab — только этот стол
+// Alt+Tab — по всем окнам на всех рабочих столах (как в KDE)
 recent-windows {
     binds {
         Alt+Tab         { next-window scope="all"; }
         Alt+Shift+Tab   { previous-window scope="all"; }
-        Mod+Tab         { next-window scope="workspace"; }
-        Mod+Shift+Tab   { previous-window scope="workspace"; }
     }
 }
 

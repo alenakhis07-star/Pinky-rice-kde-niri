@@ -44,6 +44,9 @@ cd Pinky-rice-kde-niri
 | Super+Space | раскладка |
 | Super+1…4, Super+Shift+1…4 | рабочий стол / перенести окно туда |
 | Super+Ctrl+←/→ | соседний рабочий стол |
+| Super+Tab (niri) | прошлый рабочий стол и обратно |
+| Super+PgUp/PgDn (niri) | прошлое окно и обратно |
+| Super+колесо / Super+Shift+колесо (niri) | окна / рабочие столы |
 | Print | скриншот области |
 | Ctrl+Alt+Del | меню сеанса (niri) / выход (KDE) |
 
