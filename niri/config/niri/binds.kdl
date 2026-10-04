@@ -54,8 +54,8 @@ binds {
     Mod+Shift+Down       { focus-monitor-down; }
 
     // рабочие столы: Super+Ctrl+стрелки, колесо, цифры
-    Mod+Ctrl+Left  { focus-workspace-down; }
-    Mod+Ctrl+Right { focus-workspace-up; }
+    Mod+Ctrl+Left  { focus-window-previous; }
+    Mod+Ctrl+Right { focus-window-previous; }
     Mod+Ctrl+Down  { focus-workspace-down; }
     Mod+Ctrl+Up    { focus-workspace-up; }
     // Super+Tab — на прошлый рабочий стол и обратно; Super+PgUp/PgDn — на прошлое окно и обратно
