@@ -26,6 +26,7 @@ cd Pinky-rice-kde-niri
 | `./install.sh` | всё: пакеты, настройки, и если ты уже в KDE — сразу оформление |
 | `./install.sh --user` | только файлы и настройки, без пакетов и sudo |
 | `./install.sh --plasma` | только оформление KDE (внутри сеанса Plasma) |
+| `./install.sh --xbox-dns` | только [Xbox DNS](https://xbox-dns.ru) с шифрованием DNS-over-TLS (выключить: `bash scripts/xbox-dns.sh --off`) |
 
 Перед изменениями текущие настройки копируются в `~/.cache/pinky-rice-backup-…`.
 

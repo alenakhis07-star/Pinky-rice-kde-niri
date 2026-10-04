@@ -3,6 +3,7 @@
 #   ./install.sh           — всё: пакеты (sudo), настройки, и если ты уже в KDE — сразу оформление
 #   ./install.sh --plasma  — только применить оформление KDE (запускать внутри сеанса Plasma)
 #   ./install.sh --user    — только файлы и настройки, без пакетов
+#   ./install.sh --xbox-dns — только Xbox DNS (выключить: bash scripts/xbox-dns.sh --off)
 set -euo pipefail
 cd "$(dirname "$0")"
 chmod +x scripts/*.sh niri/bin/*
@@ -10,7 +11,8 @@ chmod +x scripts/*.sh niri/bin/*
 case "${1:-}" in
   --plasma) exec bash scripts/plasma.sh ;;
   --user)   bash scripts/user.sh ;;
-  *)        bash scripts/system.sh; bash scripts/user.sh ;;
+  --xbox-dns) exec bash scripts/xbox-dns.sh ;;
+  *)        bash scripts/system.sh; bash scripts/xbox-dns.sh; bash scripts/user.sh ;;
 esac
 
 if [ "${XDG_CURRENT_DESKTOP:-}" = "KDE" ]; then
