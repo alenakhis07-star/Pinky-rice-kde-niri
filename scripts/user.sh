@@ -72,6 +72,18 @@ touch ~/.config/kitty/kitty.conf
 grep -q '^include kitty-pinky.conf' ~/.config/kitty/kitty.conf || printf '\ninclude kitty-pinky.conf\n' >> ~/.config/kitty/kitty.conf
 cp "$R/kde/fastfetch.jsonc" ~/.config/fastfetch/config.jsonc
 
+echo "==> Neovim: LazyVim в розовом стиле (C/C++, Python, Bash и др.)"
+if [ -d ~/.config/nvim ] && [ ! -f ~/.config/nvim/lua/plugins/pinky.lua ]; then
+  mv ~/.config/nvim "$BK/nvim-old"
+fi
+mkdir -p ~/.config/nvim && cp -a "$R/nvim/." ~/.config/nvim/
+echo "   скачиваю плагины (1–2 минуты)..."
+nvim --headless "+Lazy! restore" +qa >/dev/null 2>&1 || true
+echo "   ставлю языковые серверы, форматтеры и отладчики (несколько минут)..."
+nvim --headless -c "Lazy! load mason.nvim" \
+  -c "MasonInstall stylua shfmt codelldb cmakelang cmakelint markdownlint-cli2 markdown-toc shellcheck bash-language-server clang-format ruff debugpy tree-sitter-cli json-lsp pyright marksman clangd yaml-language-server taplo lua-language-server neocmakelsp" \
+  -c qa >/dev/null 2>&1 || true
+
 echo "==> niri: конфиги, бар, лаунчер, уведомления, блокировка"
 for d in niri waybar rofi dunst swaylock; do
   mkdir -p ~/.config/$d && cp -a "$R/niri/config/$d/." ~/.config/$d/

@@ -18,6 +18,7 @@ binds {
     Mod+Q repeat=false { close-window; }
     Mod+F              { fullscreen-window; }
     Mod+M              { maximize-column; }
+    Mod+C              { center-window; }
     Mod+Ctrl+F         { maximize-window-to-edges; }
     Mod+Ctrl+Shift+F   { expand-column-to-available-width; }
     Mod+Shift+Space    { toggle-window-floating; }

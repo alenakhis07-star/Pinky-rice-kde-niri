@@ -8,7 +8,8 @@ echo "==> Пакеты: KDE Plasma и программы"
 sudo pacman -S --needed plasma-meta \
     dolphin kate gwenview okular ark kcalc partitionmanager filelight haruna skanpage konsole \
     ffmpegthumbs kdegraphics-thumbnailers kio-extras \
-    kitty neovim fastfetch python curl libarchive
+    kitty neovim fastfetch python curl libarchive \
+    git nodejs npm unzip ripgrep fd gcc clang cmake make tree-sitter-cli lazygit shellcheck python-pip
 
 echo "==> Пакеты: niri и всё для него"
 # xdg-desktop-portal-gnome — демонстрация экрана в niri (заодно ставит Nautilus, он нужен для Super+E)

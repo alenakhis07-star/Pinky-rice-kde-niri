@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# Блокировка экрана: сначала раскладка -> английская (us, первая в списке), чтобы пароль всегда вводился латиницей
-niri msg action switch-layout 0 2>/dev/null
+# Блокировка экрана: сначала раскладка -> английская (us, первая в списке), чтобы пароль всегда вводился латиницей.
+# flock не даёт запустить второй swaylock, если блокировка сработала одновременно с двух сторон.
+exec 9>"${XDG_RUNTIME_DIR:-/tmp}/pinky-lock.lock"
+flock -n 9 || exit 0
 pgrep -x swaylock >/dev/null && exit 0
+niri msg action switch-layout 0 2>/dev/null
 exec swaylock -f "$@"

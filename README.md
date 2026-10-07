@@ -51,7 +51,17 @@ cd Pinky-rice-kde-niri
 | Print | скриншот области |
 | Ctrl+Alt+Del | меню сеанса (niri) / выход (KDE) |
 
-Только в niri: Super+стрелки — фокус, Super+Alt+стрелки — двигать окна, Super+Shift+стрелки — другой монитор, Ctrl+Super+Shift+стрелки — перенести окно на другой монитор, Super+P — меню сеанса, Super+T — сделать окно плавающим и обратно, Super+O — обзор, Super+Shift+/ — все сочетания.
+Только в niri: Super+стрелки — фокус, Super+Alt+стрелки — двигать окна, Super+Shift+стрелки — другой монитор, Ctrl+Super+Shift+стрелки — перенести окно на другой монитор, Super+P — меню сеанса, Super+T — сделать окно плавающим и обратно, Super+C — окно по центру, Super+O — обзор, Super+Shift+/ — все сочетания.
+
+## Neovim (LazyVim)
+
+Ставится вместе со всем остальным: [LazyVim](https://github.com/LazyVim/LazyVim) в тех же розовых цветах, с прозрачным фоном kitty.
+
+- автодополнение с документацией и подсказками аргументов, ошибки прямо в коде, форматирование при сохранении
+- C/C++ (clangd, clang-format, отладчик codelldb), Python (pyright, ruff, debugpy), Bash (bashls, shellcheck, shfmt), CMake, Lua, JSON, YAML, TOML, Markdown
+- `<пробел>r` — собрать и запустить текущий файл (Python, C, C++, Bash, Lua)
+- команды работают и в русской раскладке
+- `<пробел>` — меню всех команд (which-key), `<пробел>e` — дерево файлов, `<пробел>ff` — поиск файла, `<пробел>sg` — поиск по тексту, `gd` — к определению, `K` — документация
 
 ## Благодарности
 
@@ -60,4 +70,5 @@ cd Pinky-rice-kde-niri
 - тема SDDM — [Keyitdev/sddm-astronaut-theme](https://github.com/Keyitdev/sddm-astronaut-theme) (GPL-3.0)
 - курсор Мизуки — из [lezzthanthree/amiArch-Mizoox](https://github.com/lezzthanthree/amiArch-Mizoox)
 - иконки — [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) (розовые папки — [KDE Store](https://store.kde.org/p/1166289))
+- редактор — [LazyVim](https://github.com/LazyVim/LazyVim)
 - шрифт — [Terminus TTF](https://files.ax86.net/terminus-ttf/) (SIL OFL)
