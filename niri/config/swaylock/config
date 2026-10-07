@@ -7,7 +7,7 @@ fade-in=0.3
 clock
 timestr=%H:%M
 datestr=%A, %d %B
-font=Terminus (TTF)
+font=Nunito
 font-size=26
 indicator
 indicator-radius=120

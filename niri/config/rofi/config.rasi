@@ -2,7 +2,7 @@ configuration {
     modi: "drun,run";
     show-icons: true;
     icon-theme: "Papirus-Dark";
-    font: "Terminus (TTF) 15";
+    font: "Nunito 15";
     display-drun: " ♡ ";
     display-run: " $ ";
     drun-display-format: "{name}";

@@ -13,7 +13,7 @@ hotkey-overlay {
     skip-at-startup
 }
 
-// Qt-программы берут цвета, иконки и шрифты из настроек KDE (Strawberry Night, Papirus-Dark, Terminus)
+// Qt-программы берут цвета, иконки и шрифты из настроек KDE (Strawberry Night, Papirus-Dark, Nunito, JetBrains Mono)
 environment {
     QT_QPA_PLATFORMTHEME "kde"
     XCURSOR_THEME "mizuki-psekai-cursor"

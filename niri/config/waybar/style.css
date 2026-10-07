@@ -8,7 +8,8 @@
 @define-color red     #e0788f;
 
 * {
-    font-family: "Terminus (TTF)", "Symbols Nerd Font", sans-serif;
+    font-family: "Nunito", "Symbols Nerd Font", sans-serif;
+    font-weight: 600;
     font-size: 20px;
     min-height: 0;
     border: none;

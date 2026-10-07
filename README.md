@@ -71,4 +71,4 @@ cd Pinky-rice-kde-niri
 - курсор Мизуки — из [lezzthanthree/amiArch-Mizoox](https://github.com/lezzthanthree/amiArch-Mizoox)
 - иконки — [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) (розовые папки — [KDE Store](https://store.kde.org/p/1166289))
 - редактор — [LazyVim](https://github.com/LazyVim/LazyVim)
-- шрифт — [Terminus TTF](https://files.ax86.net/terminus-ttf/) (SIL OFL)
+- шрифты — [Nunito](https://github.com/googlefonts/nunito) и [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) (SIL OFL)

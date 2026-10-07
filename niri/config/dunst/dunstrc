@@ -13,7 +13,7 @@
     frame_color = "#e7a3bf"
     corner_radius = 14
     separator_height = 0
-    font = Terminus (TTF) 13
+    font = Nunito 13
     markup = full
     format = "<span foreground='#c98ba6'>%a</span>\n<b>%s</b>\n%b"
     alignment = left

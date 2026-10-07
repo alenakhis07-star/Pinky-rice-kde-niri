@@ -9,9 +9,11 @@ for f in kdeglobals kwinrc kxkbrc kcminputrc kscreenlockerrc mimeapps.list niri 
   [ -e ~/.config/$f ] && cp -a ~/.config/$f "$BK/" || true
 done
 
-echo "==> Шрифт Terminus, курсор Мизуки, обои"
-mkdir -p ~/.local/share/fonts/terminus ~/.local/share/icons ~/.local/share/wallpapers ~/.local/share/color-schemes
-cp "$R"/fonts/*.ttf ~/.local/share/fonts/terminus/ && fc-cache -f >/dev/null
+echo "==> Шрифты Nunito и JetBrains Mono, курсор Мизуки, обои"
+mkdir -p ~/.local/share/fonts/pinky ~/.local/share/icons ~/.local/share/wallpapers ~/.local/share/color-schemes
+cp "$R"/fonts/*.ttf ~/.local/share/fonts/pinky/
+mkdir -p ~/.config/fontconfig && cp "$R/kde/fonts.conf" ~/.config/fontconfig/fonts.conf   # шрифты по умолчанию для всех программ
+fc-cache -f >/dev/null
 rm -rf ~/.local/share/icons/mizuki-psekai-cursor && cp -r "$R/icons/mizuki-psekai-cursor" ~/.local/share/icons/
 cp "$R"/wallpapers/* ~/.local/share/wallpapers/
 cp "$R/kde/StrawberryNight.colors" ~/.local/share/color-schemes/
@@ -35,16 +37,16 @@ for i,n in re.findall(r'<downloadname(\d+)>(.*?)</downloadname\d+>',s):
 fi
 
 echo "==> Настройки KDE (цвета, шрифты, курсор, окна, раскладка)"
-F="Terminus (TTF)"
+F="Nunito"; MONO="JetBrains Mono"
 w() { kwriteconfig6 "$@"; }
 w --file kdeglobals --group General --key ColorScheme StrawberryNight
 w --file kdeglobals --group Icons --key Theme Papirus-Dark
 w --file kdeglobals --group General --key font                 "$F,15,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 w --file kdeglobals --group General --key menuFont             "$F,15,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 w --file kdeglobals --group General --key toolBarFont          "$F,14,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
-w --file kdeglobals --group General --key smallestReadableFont "$F,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
-w --file kdeglobals --group General --key fixed                "$F,15,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
-w --file kdeglobals --group WM      --key activeFont           "$F,15,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+w --file kdeglobals --group General --key smallestReadableFont "$F,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+w --file kdeglobals --group General --key fixed                "$MONO,14,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+w --file kdeglobals --group WM      --key activeFont           "$F,15,-1,5,600,0,0,0,0,0,0,0,0,0,0,1"
 w --file kcminputrc --group Mouse --key cursorTheme mizuki-psekai-cursor
 w --file kcminputrc --group Mouse --key cursorSize 32
 w --file kwinrc --group org.kde.kdecoration2 --key library org.kde.breeze
@@ -115,6 +117,9 @@ printf '[D-BUS Service]\nName=org.freedesktop.FileManager1\nExec=%s/.local/bin/p
   > ~/.local/share/dbus-1/services/org.freedesktop.FileManager1.service
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null || true
 gsettings set org.gnome.desktop.interface accent-color 'pink' 2>/dev/null || true
+gsettings set org.gnome.desktop.interface font-name 'Nunito 15' 2>/dev/null || true
+gsettings set org.gnome.desktop.interface document-font-name 'Nunito 15' 2>/dev/null || true
+gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono 14' 2>/dev/null || true
 
 # Happ: в niri стартует из startup.kdl (после бара, чтобы попасть в трей), обычный автозапуск — для KDE
 if [ -f ~/.config/autostart/Happ.desktop ] && ! grep -q '^NotShowIn=' ~/.config/autostart/Happ.desktop; then
