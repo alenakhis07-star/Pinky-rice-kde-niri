@@ -22,6 +22,12 @@ local function run_file()
     vim.notify("Не знаю, как запустить файл типа «" .. ft .. "»", vim.log.levels.WARN)
     return
   end
-  Snacks.terminal(cmd, { cwd = vim.fn.expand("%:p:h"), interactive = false, win = { position = "bottom", height = 0.35 } })
+  -- терминал принимает ввод (scanf, input() и т.п.); после завершения окно остаётся — закрыть: q
+  Snacks.terminal(cmd, {
+    cwd = vim.fn.expand("%:p:h"),
+    interactive = true,
+    auto_close = false,
+    win = { position = "bottom", height = 0.4, keys = { q = "hide" } },
+  })
 end
 vim.keymap.set("n", "<leader>r", run_file, { desc = "Запустить файл" })
